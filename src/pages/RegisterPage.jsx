@@ -1,11 +1,16 @@
 import React from 'react'
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
+import { fetchRegister } from 'redux/api/authAPI';
+
 
 export default function RegisterPage() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const dispatch = useDispatch();
 
     const handleChangeInput = (e) => {
         const { name, value } = e.target;
@@ -22,13 +27,21 @@ export default function RegisterPage() {
                 break;
             default: return;
         }
+    };
+
+    const handlesSubmit = (e) => {
+        e.preventDefault();
+        dispatch(fetchRegister({ name, email, password }));
+        setName('');
+        setEmail('');
+        setPassword('');
     }
 
     const nameUser = nanoid();
     const emailUser = nanoid();
     const passwordId = nanoid();
   return (
-    <form>
+    <form onSubmit={handlesSubmit}>
           <label htmlFor={nameUser} />
           <input
                 type="text"
