@@ -1,4 +1,16 @@
+import axios from 'axios';
 import { createAsyncThunk } from "@reduxjs/toolkit";
+
+export const fetchRegister = createAsyncThunk(
+    'auth/register',
+    async (dataUser, thunkAPI) => {
+        try {
+
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error);
+        }
+    }
+)
 
 export const fetchContacts = createAsyncThunk(
     'contacts/fetch',
