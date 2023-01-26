@@ -16,4 +16,18 @@ export const fetchRegister = createAsyncThunk(
             return thunkAPI.rejectWithValue(error);
         }
     }
+);
+
+export const fetchLogin = createAsyncThunk(
+    'auth/login',
+    async (dataUser, thunkAPI) => {
+        try {
+            console.log(dataUser);
+            const { data } = await axios.post('/users/login', dataUser);
+            console.log(data);
+            return data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error);
+        }
+    }
 )

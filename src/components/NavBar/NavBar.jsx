@@ -1,19 +1,22 @@
 import React from 'react';
+import { nanoid } from 'nanoid';
 import { NavLink } from "react-router-dom";
-import itemsNavMenu from './itemsNavMenu';
+import { useSelector } from 'react-redux';
+import AuthNavMenu from './AuthNavMenu';
+import UserNavMenu from './UserNavMenu';
+import { getIsLoggedIn } from 'redux/auth/auth-selectors';
 
 export default function NavBar() {
-    const elements = itemsNavMenu.map(({ text, id, to }) => {
-        return (
-            <li key={id}>
-                <NavLink to={to}>{text}</NavLink>
-            </li>
-        )
-    })
+    const isLogginUser = useSelector(getIsLoggedIn);
+    const homeId = nanoid();
   return (
     <nav>
         <ul>
-            {elements}
+        <li key={homeId}>
+            <NavLink to="/">HOME</NavLink>
+        </li>
+            {isLogginUser ? <UserNavMenu /> : <AuthNavMenu />}
+            
         </ul>
     </nav>
   )
