@@ -1,4 +1,3 @@
-import NavBar from 'components/NavBar/NavBar';
 import { Wrapper } from './AppStyled';
 import { Route, Routes } from 'react-router-dom';
 import Layout from 'components/Layout';
