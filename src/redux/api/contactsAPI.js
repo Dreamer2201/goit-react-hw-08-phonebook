@@ -1,15 +1,14 @@
-// import axios from 'axios';
+import axios from 'axios';
 import { createAsyncThunk } from "@reduxjs/toolkit";
-
 
 
 export const fetchContacts = createAsyncThunk(
     'contacts/fetch',
     async (_, { rejectWithValue }) => {
         try {
-            const response = await fetch('https://63c8ee10320a0c4c953d3945.mockapi.io/contacts');
-            const result = await response.json();
-            return result;
+            const {data} = await axios.get('/contacts');
+            console.log(data);          
+            return data;
         } catch(error) {
             return rejectWithValue(error);
         }
@@ -18,17 +17,11 @@ export const fetchContacts = createAsyncThunk(
 
 export const addNewContact = createAsyncThunk(
     'contacts/add',
-    async (data, { rejectWithValue }) => {
+    async (newContact, { rejectWithValue }) => {
         try {
-            const response = await fetch('https://63c8ee10320a0c4c953d3945.mockapi.io/contacts', {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    "Content-type": "application/json"
-                }
-            });          
-            const result = await response.json();
-            return result;
+            console.log(newContact);
+            const {data} = await axios.post('/contacts', newContact);          
+            return data;
         } catch (error) {
             return rejectWithValue(error);
         }
@@ -37,11 +30,11 @@ export const addNewContact = createAsyncThunk(
 
 export const deleteContact = createAsyncThunk(
     'contacts/delete',
-    async ({ id }, { rejectWithValue }) => {
+    async ({id}, { rejectWithValue }) => {
+        console.log(id);
         try {
-            await fetch(`https://63c8ee10320a0c4c953d3945.mockapi.io/contacts/${id}`, {
-                method: 'DELETE'
-            });
+            const {data} = await axios.delete(`/contacts/${id}`);
+            console.log(id);
             return id;
         } catch (error) {
             return rejectWithValue(error);

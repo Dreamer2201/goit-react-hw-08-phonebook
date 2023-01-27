@@ -1,6 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { nanoid } from 'nanoid'
+import { nanoid } from 'nanoid';
+import { NavBarLink } from './StyledNavBar';
 
 export default function AuthNavMenu() {
     const registerId = nanoid();
@@ -9,10 +9,10 @@ export default function AuthNavMenu() {
     return (
         <>
         <li key={registerId}>
-            <NavLink to="/register">Register</NavLink>
+            <NavBarLink  to="/register">Register</NavBarLink >
         </li>
         <li key={loginId}>
-            <NavLink to="/login">Log in</NavLink>
+            <NavBarLink  to="/login">Log in</NavBarLink >
         </li>
         </>
     )

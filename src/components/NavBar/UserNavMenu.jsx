@@ -1,7 +1,7 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { nanoid } from 'nanoid';
 import { useSelector, useDispatch } from 'react-redux';
+import { NavBarLink } from './StyledNavBar';
 import { getNameUser } from 'redux/auth/auth-selectors';
 import { fetchLogout } from 'redux/api/authAPI';
 
@@ -12,7 +12,8 @@ export default function UserNavMenu() {
     return (
         <>
         <li key={contactsId}>
-            <NavLink to="/contacts">Contacts</NavLink>
+            <NavBarLink  to="/contacts">Contacts</NavBarLink >
+            <NavBarLink to='/family'>Family</NavBarLink>
         </li>
         <p>Wellcome, {nameUser}</p>
         <button type='button' onClick={() => dispatch(fetchLogout())}>Log out</button>

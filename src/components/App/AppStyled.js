@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
+
 const Wrapper = styled.div`
     height: '100vh',
     fontSize: 40,                                                                        
-    color: '#010101'
+    color: '#010101';
 `;
 
 const Title = styled.h2`

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { fetchLogin } from 'redux/api/authAPI';
+import { LoginFormStyled, ButtonStyled } from './StyledLoginForm';
 
 
 export default function LoginPage() {
@@ -35,7 +36,9 @@ export default function LoginPage() {
     const emailUserId = nanoid();
     const passwordId = nanoid();
   return (
-    <form onSubmit={handlesSubmit}>
+    <>
+    <p>Enter your email and password, please.</p>
+    <LoginFormStyled onSubmit={handlesSubmit}>
           <label htmlFor={emailUserId} />
           <input
                 type="text"
@@ -54,7 +57,8 @@ export default function LoginPage() {
                 required
                 onChange={handleChangeInput}
           />
-          <button type='submit'>Log in</button>
-    </form>
+          <ButtonStyled  type='submit'>Log in</ButtonStyled>
+    </LoginFormStyled>
+    </>
   )
 }

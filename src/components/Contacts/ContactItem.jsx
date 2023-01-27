@@ -1,11 +1,11 @@
 import { ContactItemStyled, DeleteContactBtn} from "./ContactsStyled"
 
 export default function ContactItem({ contact, deleteContact }) {
-    const { id, name, phone } = contact;
+    const { id, name, number } = contact;
 
     return (
         <div>
-            <ContactItemStyled> {name}: {phone}
+            <ContactItemStyled> {name}: {number}
                 <DeleteContactBtn type='button'
                     onClick={() => deleteContact({ id })}
                 > Delete

@@ -35,7 +35,7 @@ export default function PhonebookForm() {
         e.preventDefault();
         const contact = {
             name,
-            phone: number,
+            number,
         };
         setName('');
         setNumber('');

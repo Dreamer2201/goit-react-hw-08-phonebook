@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { fetchRegister } from 'redux/api/authAPI';
-
+import { RegFormStyled } from './StyledRegistrationForm';
+import { ButtonStyled } from './StyledLoginForm';
 
 export default function RegisterPage() {
     const [name, setName] = useState('');
@@ -40,14 +41,17 @@ export default function RegisterPage() {
     const nameUser = nanoid();
     const emailUser = nanoid();
     const passwordId = nanoid();
-  return (
-    <form onSubmit={handlesSubmit}>
+  return (    
+    <>
+    <p>Typy registration form, please.</p>
+    <RegFormStyled onSubmit={handlesSubmit}>
           <label htmlFor={nameUser} />
           <input
                 type="text"
                 name="name"
                 value={name}
                 id={nameUser}
+                placeholder='Your name'
                 required
                 onChange={handleChangeInput}
           />
@@ -57,6 +61,7 @@ export default function RegisterPage() {
                 name="email"
                 value={email}
                 id={emailUser}
+                placeholder='Your email ...@gmail.com'
                 required
                 onChange={handleChangeInput}
           />
@@ -66,10 +71,12 @@ export default function RegisterPage() {
                 name="password"
                 value={password}
                 id={passwordId}
+                placeholder='Create your unik password'
                 required
                 onChange={handleChangeInput}
           />
-          <button type='submit'>Submit registration</button>
-    </form>
+          <ButtonStyled  type='submit'>Submit registration</ButtonStyled >
+    </RegFormStyled>
+    </>
   )
 }
