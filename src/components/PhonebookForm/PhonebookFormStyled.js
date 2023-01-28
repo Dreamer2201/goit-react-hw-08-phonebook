@@ -5,8 +5,9 @@ const Form = styled.form`
     padding: 10px;
     display: flex;
     flex-direction: column;
-    border: 1px solid grey;
+    border: 0px solid #FFF;
     border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
 `;
 
 const Btn = styled.button`

@@ -11,9 +11,10 @@ import { useEffect, Suspense, lazy } from 'react';
 import PrivateRoute from './PrivateRoute';
 import PublicRout from './PublicRout';
 
+// const Home = lazy(() => import("./pages/Home/Home"));
 // const LoginPage = lazy(() => import('pages/LoginPage'));
 // const RegisterPage = lazy(() => import('pages/RegisterPage'));
-// const ContactsPage = lazy(() => import('pages/ContactsPage'));
+// const ContactsPage = lazy(() => import("pages/ContactsPage"));
 
 export default function App() {
     const dispatch = useDispatch();
@@ -23,7 +24,7 @@ export default function App() {
     }, [dispatch]);
     
     return (<Wrapper> 
-                {/* <Suspense fallback={<p>Loading content...</p>}>               */}
+                {/* <Suspense fallback={<p>Loading...</p>}>               */}
                     <Routes>
                         <Route path='/' element={ <Layout /> } >
                             {/* <Route element={<PublicRout />}> */}

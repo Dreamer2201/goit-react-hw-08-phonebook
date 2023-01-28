@@ -8,15 +8,15 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h2`
-    font-size: 34px;
-    text-shadow: #FC0 1px 0 10px;
+    font-size: 24px;
+    text-shadow: #FC0 1px 0 5px;
 `;
 const InputName = styled.label`
-    margin: 10px;
+    margin: 5px;
     padding: 4px;
-    font-size: 24px;
+    font-size: 16px;
     font-style: italic;
-    text-shadow: #FA0 1px 0 10px;
+    text-shadow: #FA0 1px 0 5px;
 `;
 
 export { Wrapper, Title, InputName };

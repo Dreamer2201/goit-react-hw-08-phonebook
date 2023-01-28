@@ -1,6 +1,5 @@
 const filterContact = ({ auth, contacts, filter }) => {
   const arrContacts = contacts.contacts;
-  console.log(arrContacts);
     const filterNormolaze = filter.toLocaleLowerCase();
     if (!filter) {
       return arrContacts;
