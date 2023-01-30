@@ -8,8 +8,13 @@ const initialState = {
         loading: false,
         error: null,
 }
-const notifyDublicate = (str) => toast.info(str);
-const notifySucsess = (str) => toast.success(str);
+const notifyDublicate = (str) => toast.info(str, {
+    autoClose: 2000,
+});
+const notifySucsess = (str) => toast.success(str, {
+    autoClose: 1800,
+    icon: "🚀"
+  });
 
 const contactsSlice = createSlice({
     name: 'contacts',
@@ -19,14 +24,12 @@ const contactsSlice = createSlice({
             reducer: (state, {payload}) => {
                 const isDublicate = state.family.find(item => item.id === payload.id);
                 if(isDublicate) {
-                    notifyDublicate('This contact is already in family list.', {
-                        position: "top-right",
-                        autoClose: 1500,
-                    })
+                    notifyDublicate('This contact is already in family list.')
                     return state;
                 }
              const familyContacts = state.contacts.filter(item => item.id === payload.id);
              state.family = [...state.family, ...familyContacts ];
+             notifySucsess(`Add to family list!`);
              return state;
             }
         }
@@ -72,7 +75,6 @@ const contactsSlice = createSlice({
         [addNewContact.fulfilled]: (state, action) => {
             state.loading = false;
             state.contacts.push(action.payload);
-            console.log(action.payload.name);
             notifySucsess(`${action.payload.name}  add to phonebook!`);
             return state;
         },
