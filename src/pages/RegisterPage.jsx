@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { fetchRegister } from 'redux/api/authAPI';
-import { RegFormStyled } from './StyledRegistrationForm';
+import { ConteinerRegisrationPage, RegFormStyled, TitleRegPage } from './StyledRegistrationForm';
 import { ButtonStyled } from './StyledLoginForm';
 
 export default function RegisterPage() {
@@ -42,8 +42,8 @@ export default function RegisterPage() {
     const emailUser = nanoid();
     const passwordId = nanoid();
   return (    
-    <>
-    <p>Typy registration form, please.</p>
+    <ConteinerRegisrationPage>
+    <TitleRegPage>Type registration form, please.</TitleRegPage>
     <RegFormStyled onSubmit={handlesSubmit}>
           <label htmlFor={nameUser} />
           <input
@@ -77,6 +77,6 @@ export default function RegisterPage() {
           />
           <ButtonStyled  type='submit'>Submit registration</ButtonStyled >
     </RegFormStyled>
-    </>
+    </ConteinerRegisrationPage>
   )
 }

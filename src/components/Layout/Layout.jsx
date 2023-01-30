@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom';
-import NavBar from './NavBar/NavBar';
+import NavBar from '../NavBar/NavBar';
 import { HeaderStyled } from './LayoutStyles';
 
 export default function Layout() {
@@ -12,7 +12,6 @@ export default function Layout() {
           <main>
               <Outlet />
           </main>
-          <footer> Jun 2023 </footer>
     </>
   )
 }

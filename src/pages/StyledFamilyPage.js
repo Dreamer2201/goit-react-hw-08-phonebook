@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import img from 'images/phonetalking.jpg';
+import img from 'images/phonebook-img.jpg';
 
 const ConteinerFamilyPage = styled.div`
     width: '100vw';

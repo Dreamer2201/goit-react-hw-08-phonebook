@@ -15,13 +15,13 @@ const ListNavBar = styled.ul`
     align-items: center;
 `;
 const NavBarLink = styled(NavLink)`
-    font-size: 18px;
+    font-size: 22px;
     text-decoration: none;
-    text-shadow: #FFF 1px 0 5px;
+    text-shadow: #FFF 1px 0 1px;
+    color: #DAF7A6;
 
     &.active {
         padding: 5px;
-        color: #ffffff;
         background-color: rgba(72, 102, 157, .6);
         border-radius: 10px;
       }
@@ -33,8 +33,10 @@ const LogoLink = styled(Link)`
 `;
 
 const Wellcome = styled.p`
-    font-size: 18px;
-    text-shadow: #FFF 1px 0 5px;
+    font-size: 28px;
+    text-decoration: none;
+    text-shadow: #FFF 1px 0 4px;
+    color: #DAF7A6 ;
 `;
 
 const BtnLogOut = styled.button`
@@ -45,9 +47,9 @@ const BtnLogOut = styled.button`
         font-size: 16px;
         cursor: pointer;
         border-radius: 10px;
-        color: #000000;
+        color: #DAF7A6 ;
         border: transparent;
-        background-color: transparent;
+        background-color: rgba(230, 230, 250, 0.2);
 
         &hover,
         &focus {

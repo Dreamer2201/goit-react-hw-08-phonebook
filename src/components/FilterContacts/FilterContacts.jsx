@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
-import { InputName } from './App/AppStyled';
-import { getFilter } from '../redux/filter/filter-selectors';
+import { InputName } from '../App/AppStyled';
+import { getFilter } from '../../redux/filter/filter-selectors';
 import { useSelector, useDispatch } from 'react-redux';
 import { filterNameContact } from "redux/filter/filter-Slice";
 

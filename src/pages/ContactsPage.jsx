@@ -1,7 +1,7 @@
 import React from 'react'
 import PhonebookForm from 'components/PhonebookForm/PhonebookForm';
 import Contacts from 'components/Contacts/Contacts';
-import FilterContacts from 'components/FilterContacts';
+import FilterContacts from 'components/FilterContacts/FilterContacts';
 import { Title } from 'components/App/AppStyled';
 import { ConteinerContactsPage } from './StyledContactPage';
 

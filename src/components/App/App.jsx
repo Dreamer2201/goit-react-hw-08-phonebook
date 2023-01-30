@@ -1,20 +1,16 @@
 import { Wrapper } from './AppStyled';
 import { Route, Routes } from 'react-router-dom';
-import Layout from 'components/Layout';
+import Layout from 'components/Layout/Layout';
 import ContactsPage from 'pages/ContactsPage';
-import FamilyContactsPage from 'pages/FamilyContactsPage';
 import RegisterPage from 'pages/RegisterPage';
 import LoginPage from 'pages/LoginPage';
 import { useDispatch } from 'react-redux';
 import { fetchCurrentUser } from 'redux/api/authAPI';
 import { useEffect, Suspense, lazy } from 'react';
-import PrivateRoute from './PrivateRoute';
-import PublicRout from './PublicRout';
+import PrivateRoute from '../Routs/PrivateRoute';
+import RedirectRoute from '../Routs/RedirectRoute';
 
-// const Home = lazy(() => import("./pages/Home/Home"));
-// const LoginPage = lazy(() => import('pages/LoginPage'));
-// const RegisterPage = lazy(() => import('pages/RegisterPage'));
-// const ContactsPage = lazy(() => import("pages/ContactsPage"));
+const FamilyContactsPage = lazy(() => import("pages/FamilyContactsPage"));
 
 export default function App() {
     const dispatch = useDispatch();
@@ -24,22 +20,22 @@ export default function App() {
     }, [dispatch]);
     
     return (<Wrapper> 
-                {/* <Suspense fallback={<p>Loading...</p>}>               */}
-                    <Routes>
-                        <Route path='/' element={ <Layout /> } >
-                            {/* <Route element={<PublicRout />}> */}
-                                <Route path='register' element={ <RegisterPage />} />
-                                <Route path='login' element= {<LoginPage />} />
-                            {/* </Route> */}
-                            
-                            <Route element={<PrivateRoute />} >
-                                <Route path='contacts' element={<ContactsPage />}/>
-                            </Route>
-                            <Route path='family' element={<FamilyContactsPage />} />
-                            
-                        </Route>
-                </Routes>
-                {/* </Suspense> */}
-            </Wrapper>)
+            <Suspense fallback={<p>Loading...</p>} >
+              <Routes>
+                <Route path='/' element={ <Layout /> } >
+                        <Route path='register' element={ <RegisterPage />} />
+                        <Route path='login' element={
+                            <RedirectRoute component={LoginPage} redirect='/contacts' />
+                        } />                   
+                        <Route path='contacts' element={
+                            <PrivateRoute conponent={<ContactsPage />} redirect='/login' />
+                        }/>
+                    <Route path='family' element={
+                    <PrivateRoute conponent={<FamilyContactsPage />} redirect='/login' />
+                    } />
+                </Route>
+        </Routes>
+        </Suspense>
+    </Wrapper>)
   }
 

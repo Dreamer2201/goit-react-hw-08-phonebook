@@ -16,12 +16,11 @@ export const fetchCurrentUser = createAsyncThunk(
     'auth/refresh',
     async (_, thunkAPI) => {
         const state = thunkAPI.getState();
-        const tokenCurrent  = state.auth.token;  
+        const tokenCurrent  = state.auth.token; 
         if(tokenCurrent === null) {
-            return state;
+            return thunkAPI.rejectWithValue();
         }
         tokenHeader.set(tokenCurrent );
-        console.log(thunkAPI.getState());
         try {
             const {data} = await axios.get('/users/current');
             return data;
@@ -38,7 +37,6 @@ export const fetchRegister = createAsyncThunk(
         try {
             const { data } = await axios.post('/users/signup', dataUser);
             tokenHeader.set(data.token);
-            console.log(data);
             return data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error);
@@ -50,10 +48,8 @@ export const fetchLogin = createAsyncThunk(
     'auth/login',
     async (dataUser, thunkAPI) => {
         try {
-            console.log(dataUser);
             const { data } = await axios.post('/users/login', dataUser);
             tokenHeader.set(data.token);
-            console.log(data);
             return data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error);
