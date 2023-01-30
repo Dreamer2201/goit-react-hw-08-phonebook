@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
+import { toast } from 'react-toastify';
 import { Form, Btn } from './PhonebookFormStyled';
 import { InputName } from '../App/AppStyled';
 import { addNewContact } from 'redux/api/contactsAPI';
@@ -11,11 +12,13 @@ export default function PhonebookForm() {
     const [number, setNumber] = useState('');
     const contacts = useSelector(filterContact);
     const dispatch = useDispatch();
-
+ 
     const isDuplicate = (contact) => {
         const result = contacts.find((item) => item.name === contact.name);
         return result;
     };
+    
+    const notifyDublicate = (str) => toast.info(str);
 
     const handleChangeInput = (e) => {
         const { name, value } = e.target;
@@ -40,7 +43,7 @@ export default function PhonebookForm() {
         setName('');
         setNumber('');
         if (isDuplicate(contact)) {
-            return alert(`${contact.name} is already in Phonebook List`);
+            return notifyDublicate(`${contact.name} is already in Phonebook List`);
         }
         dispatch(addNewContact(contact));
     };

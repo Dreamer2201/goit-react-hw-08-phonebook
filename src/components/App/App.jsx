@@ -9,6 +9,7 @@ import { fetchCurrentUser } from 'redux/api/authAPI';
 import { useEffect, Suspense, lazy } from 'react';
 import PrivateRoute from '../Routs/PrivateRoute';
 import RedirectRoute from '../Routs/RedirectRoute';
+import HomePage from 'pages/HomePage';
 
 const FamilyContactsPage = lazy(() => import("pages/FamilyContactsPage"));
 
@@ -23,6 +24,7 @@ export default function App() {
             <Suspense fallback={<p>Loading...</p>} >
               <Routes>
                 <Route path='/' element={ <Layout /> } >
+                        <Route index element={<HomePage />} />
                         <Route path='register' element={ <RegisterPage />} />
                         <Route path='login' element={
                             <RedirectRoute component={LoginPage} redirect='/contacts' />

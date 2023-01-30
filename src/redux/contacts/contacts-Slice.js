@@ -8,7 +8,8 @@ const initialState = {
         loading: false,
         error: null,
 }
-const notify = () => toast("Contact is already in family list.");
+const notifyDublicate = (str) => toast.info(str);
+const notifySucsess = (str) => toast.success(str);
 
 const contactsSlice = createSlice({
     name: 'contacts',
@@ -17,19 +18,14 @@ const contactsSlice = createSlice({
         addFamilyContact: {
             reducer: (state, {payload}) => {
                 const isDublicate = state.family.find(item => item.id === payload.id);
-                console.log(isDublicate);
                 if(isDublicate) {
-                    notify();
-                    toast("Contact is already in family list.", {
+                    notifyDublicate('This contact is already in family list.', {
                         position: "top-right",
-                        autoClose: 3000,
+                        autoClose: 1500,
                     })
-                    console.log('Contact is already in family list');
                     return state;
                 }
              const familyContacts = state.contacts.filter(item => item.id === payload.id);
-             console.log(familyContacts);
-
              state.family = [...state.family, ...familyContacts ];
              return state;
             }
@@ -61,6 +57,7 @@ const contactsSlice = createSlice({
             state.contacts = [...result];
             const deleteFromFamily = state.family.filter(item => item.id !== action.payload);
             state.family = [...deleteFromFamily];
+            notifySucsess('Contact is deleted.');
             return state;
         },
         [deleteContact.rejected]: (state, action) => {
@@ -75,6 +72,8 @@ const contactsSlice = createSlice({
         [addNewContact.fulfilled]: (state, action) => {
             state.loading = false;
             state.contacts.push(action.payload);
+            console.log(action.payload.name);
+            notifySucsess(`${action.payload.name}  add to phonebook!`);
             return state;
         },
         [addNewContact.rejected]: (state, action) => {

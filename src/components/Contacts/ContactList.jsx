@@ -1,10 +1,11 @@
 import { useEffect } from "react";
-import { ContactsListStyled } from "./ContactsStyled";
 import { useSelector, useDispatch } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ContactsListStyled } from "./ContactsStyled";
 import ContactItem from "./ContactItem";
 import filterContact from 'redux/contacts/contacts-selectors';
-import { deleteContact } from "redux/api/contactsAPI";
-import { fetchContacts } from "redux/api/contactsAPI";
+import { fetchContacts, deleteContact } from "redux/api/contactsAPI";
 import { addFamilyContact } from "redux/contacts/contacts-Slice";
 
 export function ContactsList() {
@@ -25,6 +26,7 @@ export function ContactsList() {
     return (
         <div>
             <ContactsListStyled> {elements}</ContactsListStyled>
+            <ToastContainer />
         </div>
     )
 }
