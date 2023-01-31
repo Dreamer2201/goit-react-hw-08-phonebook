@@ -12,11 +12,9 @@ const authSlice = createSlice({
     name: "auth",
     initialState,
 
-
     reducers: {
         openModal: {
             reducer: (state) => {
-                console.log('ModalOpen');
                 state.isModalOpen = true;
                 return state;
             }

@@ -36,10 +36,10 @@ const WrapperModalNavMenu = styled.div`
     @media (max-width: 767px) {
         list-style: none;
         justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 `;
 
