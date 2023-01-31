@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 const ContactsListStyled = styled.ul`
-    font-size: 24px;
+    font-size: 18px;
+    padding-inline-start: 10px;
 `;
 const ContactItemStyled = styled.li`
     display: flex;
@@ -9,7 +10,7 @@ const ContactItemStyled = styled.li`
 `;
 
 const DeleteContactBtn = styled.button`
-    margin-left: 15px;
+    margin-left: 10px;
     background-color: #e1ecf4;
     border-radius: 3px;
     border: 1px solid #7aa7c7;

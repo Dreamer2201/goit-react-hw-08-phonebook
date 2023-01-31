@@ -6,10 +6,28 @@ const initialState = {
     user: { name: null, email: null },
     token: null,
     isLoggedIn: false,
+    isModalOpen: false,
 }
 const authSlice = createSlice({
     name: "auth",
     initialState,
+
+
+    reducers: {
+        openModal: {
+            reducer: (state) => {
+                console.log('ModalOpen');
+                state.isModalOpen = true;
+                return state;
+            }
+        },
+        closeModal: {
+            reducer: (state) => {
+                state.isModalOpen = false;
+                return state;
+            }
+        }
+    },
 
     extraReducers: {
         [fetchRegister.fulfilled]: (state, action) => {
@@ -37,5 +55,5 @@ const authSlice = createSlice({
         }
     }
 });
-
+export const { openModal, closeModal } = authSlice.actions;
 export default authSlice.reducer;

@@ -17,7 +17,7 @@ const Title = styled.h2`
 
 const FamilyListStyled = styled.ul`
     list-style: none;
-    font-size: 24px;
+    font-size: 18px;
 `;
 
 export {ConteinerFamilyPage, Title, FamilyListStyled};

@@ -26,6 +26,7 @@ const NavBarLink = styled(NavLink)`
         border-radius: 10px;
       }
 `;
+
 const LogoLink = styled(Link)`
     font-size: 20px;
     text-decoration: none;
@@ -56,7 +57,33 @@ const BtnLogOut = styled.button`
             background-color: rgba(72, 102, 157, .6);
             color: #2c5777;
 }
-
 `;
 
-export {NavBarStyled, ListNavBar, NavBarLink, LogoLink, BtnLogOut, Wellcome};
+const WrapperUserNavMenu = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    
+    @media (max-width: 767px) {
+    display: none;
+    }
+`;
+
+const BurgerMenu = styled.button`
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    color: yellow;
+    font-size: 20px;
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+`;
+
+
+
+export {NavBarStyled, ListNavBar, NavBarLink, LogoLink, BtnLogOut, Wellcome, WrapperUserNavMenu, BurgerMenu};
