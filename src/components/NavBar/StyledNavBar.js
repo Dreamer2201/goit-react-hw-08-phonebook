@@ -15,7 +15,7 @@ const ListNavBar = styled.ul`
     align-items: center;
 `;
 const NavBarLink = styled(NavLink)`
-    font-size: 22px;
+    font-size: 18px;
     text-decoration: none;
     text-shadow: #FFF 1px 0 1px;
     color: #DAF7A6;
@@ -27,13 +27,13 @@ const NavBarLink = styled(NavLink)`
       }
 `;
 const LogoLink = styled(Link)`
-    font-size: 24px;
+    font-size: 20px;
     text-decoration: none;
     
 `;
 
 const Wellcome = styled.p`
-    font-size: 28px;
+    font-size: 22px;
     text-decoration: none;
     text-shadow: #FFF 1px 0 4px;
     color: #DAF7A6 ;

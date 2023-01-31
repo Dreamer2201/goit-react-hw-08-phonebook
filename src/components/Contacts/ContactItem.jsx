@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { ContactItemStyled, DeleteContactBtn, AddToFamilyBtn } from "./ContactsStyled"
 
 export default function ContactItem({ contact, deleteContact, addToFamily }) {
@@ -17,3 +18,10 @@ export default function ContactItem({ contact, deleteContact, addToFamily }) {
         </div>
     )
 }
+
+ContactItem.propTypes = {
+    contact: PropTypes.object,
+    deleteContact: PropTypes.func,
+    addToFamily: PropTypes.func,
+}
+
