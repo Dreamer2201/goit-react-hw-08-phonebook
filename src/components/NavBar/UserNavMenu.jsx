@@ -1,7 +1,7 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
 import { useSelector, useDispatch } from 'react-redux';
-import { NavBarLink, Wellcome, BtnLogOut, WrapperUserNavMenu } from './StyledNavBar';
+import { NavBarLink, ListItemsUserMenu, Wellcome, BtnLogOut, WrapperUserNavMenu } from './StyledNavBar';
 import { getNameUser } from 'redux/auth/auth-selectors';
 import { fetchLogout } from 'redux/api/authAPI';
 
@@ -12,12 +12,14 @@ export default function UserNavMenu() {
     
     return (
         <WrapperUserNavMenu>
-        <li key={contactsId}>
-            <NavBarLink  to="/contacts">Contacts</NavBarLink >
-        </li>
-        <li>
-            <NavBarLink to='/family'>Family</NavBarLink>
-        </li>
+            <ListItemsUserMenu>
+                <li key={contactsId}>
+                    <NavBarLink  to="/contacts">Contacts</NavBarLink >
+                </li>
+                <li>
+                    <NavBarLink to='/family'>Family</NavBarLink>
+                </li>
+            </ListItemsUserMenu>
         <Wellcome>Wellcome, {nameUser}</Wellcome>
         <BtnLogOut type='button' onClick={() => dispatch(fetchLogout())}>Log out</BtnLogOut>
         </WrapperUserNavMenu>

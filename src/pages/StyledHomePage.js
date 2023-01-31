@@ -17,6 +17,10 @@ const Content = styled.p`
     text-align: left;
     font-size: 22px;
     text-shadow: #FFF 1px 0 5px;
+
+    @media (min-width: 768px) {
+        width: 700px;
+    }
 `;
 
 export {ConteinerHomePage, Content};

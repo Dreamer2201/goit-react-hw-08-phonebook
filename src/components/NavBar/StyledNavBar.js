@@ -33,6 +33,15 @@ const LogoLink = styled(Link)`
     
 `;
 
+const ListItemsUserMenu = styled.ul`
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+    align-items: baseline;
+`;
+
 const Wellcome = styled.p`
     font-size: 22px;
     text-decoration: none;
@@ -67,7 +76,7 @@ const WrapperUserNavMenu = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     gap: 20px;
     }
     
@@ -90,4 +99,4 @@ const BurgerMenu = styled.button`
 
 
 
-export {NavBarStyled, ListNavBar, NavBarLink, LogoLink, BtnLogOut, Wellcome, WrapperUserNavMenu, BurgerMenu};
+export {NavBarStyled, ListNavBar, NavBarLink, LogoLink, ListItemsUserMenu, BtnLogOut, Wellcome, WrapperUserNavMenu, BurgerMenu};
