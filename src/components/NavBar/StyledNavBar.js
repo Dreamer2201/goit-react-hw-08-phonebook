@@ -60,15 +60,19 @@ const BtnLogOut = styled.button`
 `;
 
 const WrapperUserNavMenu = styled.div`
+@media (max-width: 767px) {
+    display: none;
+    }
+@media (min-width: 768px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    
-    @media (max-width: 767px) {
-    display: none;
     }
+    
+    
+    
 `;
 
 const BurgerMenu = styled.button`

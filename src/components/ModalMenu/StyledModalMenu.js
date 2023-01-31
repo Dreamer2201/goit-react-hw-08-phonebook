@@ -34,6 +34,7 @@ const BtnUserMenuModal = styled.button`
 
 const WrapperModalNavMenu = styled.div`
     @media (max-width: 767px) {
+        list-style: none;
         justify-content: center;
     align-items: center;
     display: flex;

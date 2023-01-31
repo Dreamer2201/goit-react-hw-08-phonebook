@@ -7,6 +7,7 @@ import { closeModal } from 'redux/auth/auth-Slice';
 import { getNameUser } from 'redux/auth/auth-selectors';
 import { fetchLogout } from 'redux/api/authAPI';
 import { OverlayModal, Modal, BtnUserMenuModal, WrapperModalNavMenu, NavBurgerLink, WellcomeModal, BtnLogOutModal} from './StyledModalMenu';
+import { useEffect } from 'react';
 
 
 const modalRoot = document.getElementById('modal-root');
@@ -18,9 +19,18 @@ export default function ModalMenu () {
     const nameUser = useSelector(getNameUser);
     const dispatch = useDispatch();
 
+  // useEffect (() => {
+  //   document.addEventListener('keydown', dispatch(closeModal()))
+  // }, [dispatch]);
+
+  
+
     const closeBurgerMenu = () => {
       dispatch(closeModal());
     }
+
+    
+
   
     return createPortal(
     <OverlayModal>
