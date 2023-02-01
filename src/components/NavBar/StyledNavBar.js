@@ -9,28 +9,45 @@ const NavBarStyled = styled.nav`
 `;
 
 const ListNavBar = styled.ul`
-    display: flex;
     list-style: none;
-    justify-content: space-around;
-    align-items: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+
+
 `;
 const NavBarLink = styled(NavLink)`
-    font-size: 18px;
+    font-family: 'Quattrocento Sans', sans-serif;
+    font-size: 32px;
     text-decoration: none;
-    text-shadow: #FFF 1px 0 1px;
     color: #DAF7A6;
+
+    &:hover,
+    &:focus {
+        cursor: pointer;
+        transition: #FF5733 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
     &.active {
         padding: 5px;
-        background-color: rgba(72, 102, 157, .6);
+        color: #F28C28;
+        background-color: rgba(72, 102, 157, .4);
         border-radius: 10px;
-      }
 `;
 
 const LogoLink = styled(Link)`
     font-size: 20px;
     text-decoration: none;
     
+`;
+
+const HomeNavLinkItem = styled.li`
+        margin-left: 40px;
+`;
+
+const LogInLinkItem = styled.li`
+        margin-right: 0;
 `;
 
 const ListItemsUserMenu = styled.ul`
@@ -69,6 +86,7 @@ const BtnLogOut = styled.button`
 `;
 
 const WrapperUserNavMenu = styled.div`
+
 @media (max-width: 767px) {
     display: none;
     }
@@ -97,6 +115,9 @@ const BurgerMenu = styled.button`
     }
 `;
 
+const AuthNavLinkBlock = styled.div`
+    margin-right: 10px;
+`;
 
 
-export {NavBarStyled, ListNavBar, NavBarLink, LogoLink, ListItemsUserMenu, BtnLogOut, Wellcome, WrapperUserNavMenu, BurgerMenu};
+export {NavBarStyled, ListNavBar, NavBarLink, LogoLink, HomeNavLinkItem, ListItemsUserMenu, LogInLinkItem, AuthNavLinkBlock, BtnLogOut, Wellcome, WrapperUserNavMenu, BurgerMenu};

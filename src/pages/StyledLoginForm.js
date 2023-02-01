@@ -23,10 +23,20 @@ const TitleLogPage = styled.h2`
 `;
 
 const ButtonStyled = styled.button`
-    display: inline-block;
-    width: 150px;
-    height: 30px;
-    border-radius: 10px;
+  margin: 0 auto;
+  line-height: 28px;
+  padding: 0 20px;
+  background: #ffa580;
+  letter-spacing: 2px;
+  transition: .2s all ease-in-out;
+  outline: none;
+  border: 1px solid rgba(0,0,0,1);
+  box-shadow: 3px 3px 1px 1px #95a4ff, 3px 3px 1px 2px rgba(0,0,0,1);
+  
+  &:hover
+    background: rgba(0,0,0,1);
+    color: white;
+    border: 1px solid rgba(0,0,0,1);
 `;
 
 export { ConteinerLoginPage, LoginFormStyled, TitleLogPage, ButtonStyled};

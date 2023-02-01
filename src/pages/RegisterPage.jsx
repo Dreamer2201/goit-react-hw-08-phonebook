@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { fetchRegister } from 'redux/api/authAPI';
-import { ConteinerRegisrationPage, RegFormStyled, TitleRegPage } from './StyledRegistrationForm';
+import { ContainerForm, FormStyled, TitleFormPage, InputStyled } from './StyledRegistrationForm';
 import { ButtonStyled } from './StyledLoginForm';
 
 export default function RegisterPage() {
@@ -42,11 +42,11 @@ export default function RegisterPage() {
     const emailUser = nanoid();
     const passwordId = nanoid();
   return (    
-    <ConteinerRegisrationPage>
-    <TitleRegPage>Type registration form, please.</TitleRegPage>
-    <RegFormStyled onSubmit={handlesSubmit}>
+    <ContainerForm>
+    <TitleFormPage>Type registration form, please.</TitleFormPage>
+    <FormStyled onSubmit={handlesSubmit}>
           <label htmlFor={nameUser} />
-          <input
+          <InputStyled
                 type="text"
                 name="name"
                 value={name}
@@ -56,7 +56,7 @@ export default function RegisterPage() {
                 onChange={handleChangeInput}
           />
           <label htmlFor={emailUser} />
-          <input
+          <InputStyled
                 type="text"
                 name="email"
                 value={email}
@@ -66,7 +66,7 @@ export default function RegisterPage() {
                 onChange={handleChangeInput}
           />
           <label htmlFor={passwordId} />
-          <input
+          <InputStyled
                 type="text"
                 name="password"
                 value={password}
@@ -75,8 +75,8 @@ export default function RegisterPage() {
                 required
                 onChange={handleChangeInput}
           />
-          <ButtonStyled  type='submit'>Submit registration</ButtonStyled >
-    </RegFormStyled>
-    </ConteinerRegisrationPage>
+          <ButtonStyled  type='submit'>Sign up</ButtonStyled >
+    </FormStyled>
+    </ContainerForm>
   )
 }

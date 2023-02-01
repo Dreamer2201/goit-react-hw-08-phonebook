@@ -1,6 +1,6 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
-import { NavBarLink } from './StyledNavBar';
+import { NavBarLink, LogInLinkItem, AuthNavLinkBlock } from './StyledNavBar';
 
 export default function AuthNavMenu() {
     const registerId = nanoid();

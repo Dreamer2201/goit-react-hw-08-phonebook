@@ -1,24 +1,61 @@
 import styled from 'styled-components';
-import img from 'images/phonebook-img.jpg';
 
-const ConteinerRegisrationPage = styled.div`
-    width: '100vw';
-    border: 1px solid #000;
-    background-image: linear-gradient( to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4) ), url(${img});
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+const ContainerForm = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `;
 
-const RegFormStyled = styled.form`
+const FormStyled = styled.form`
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 250px;
+    margin-top: 10px;
+    background: #f8f4e5;
+  padding: 15px 15px;
+  border: 2px solid rgba(0,0,0,1);
+  box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px rgba(0,0,0,1);
+
+  @media (min-width: 768px) {
     width: 350px;
+    padding: 50px 100px;
+  }
 `;
-const TitleRegPage = styled.h2`
+const TitleFormPage = styled.h2`
+    margin: 0;
+    padding: 0;
+    font-family: 'Lobster Two', cursive;
     font-size: 18px;
+    text-shadow: #FC0 1px 0 1px;
+
+    @media (min-width: 768px) {
+        font-size: 24px;
     text-shadow: #FC0 1px 0 2px;
+      }
 `;
 
-export {ConteinerRegisrationPage, RegFormStyled, TitleRegPage};
+const InputStyled = styled.input`
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    line-height: 28px;
+    font-family: font-family: 'Acme', sans-serif;;
+    margin-bottom: 28px;
+    border: none;
+    border-bottom: 5px solid rgba(0,0,0,1);
+    background: #f8f4e5;
+    min-width: 250px;
+    padding-left: 5px;
+    outline: none;
+    color: rgba(0,0,0,1);
+  
+    &:focus {
+        border-bottom: 5px solid #ffa580;
+    }
+  
+`;
+
+
+export { ContainerForm, FormStyled, TitleFormPage, InputStyled};

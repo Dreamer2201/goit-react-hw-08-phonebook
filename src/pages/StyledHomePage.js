@@ -1,26 +1,40 @@
 import styled from 'styled-components';
-import img from 'images/phonebook-img.jpg';
+import { Link } from 'react-router-dom';
 
-const ConteinerHomePage = styled.div`
-    width: '100vw';
-border: 1px solid #000;
-background-image: linear-gradient( to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4) ), url(${img});
-background-repeat: no-repeat;
-background-position: center;
-background-size: cover;
+const NameHomePage = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
 `;
 
+const TitleHomePage = styled.h2`
+    font-family: 'Lobster Two', cursive;
+    font-size: 24px;
+`;
+
+const LogoContacts = styled(Link)`
+    margin-right: 5px;
+`
 const Content = styled.p`
-    margin-left: auto;
-    margin-right: auto;
-    width: 320px;
-    text-align: left;
-    font-size: 22px;
-    text-shadow: #FFF 1px 0 5px;
-
-    @media (min-width: 768px) {
-        width: 700px;
-    }
+    display: block;
+    padding: 10px;
+    font-family: 'Kalam', cursive;
+    font-size: 24px;
+    text-align: justify;
+    text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+  color: white;
+`;
+const LetsGo = styled.p`
+    font-family: 'Acme', sans-serif;
+    font-size: 28px;
+    font-style: italic;
+    text-align: center;
+    color: #F28C28;
+    text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em white;
 `;
 
-export {ConteinerHomePage, Content};
+
+
+
+export { NameHomePage, TitleHomePage, LogoContacts, LetsGo ,Content};

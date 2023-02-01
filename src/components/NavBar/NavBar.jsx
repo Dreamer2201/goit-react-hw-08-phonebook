@@ -5,10 +5,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import AuthNavMenu from './AuthNavMenu';
 import UserNavMenu from './UserNavMenu';
 import { getIsLoggedIn } from 'redux/auth/auth-selectors';
-import { ListNavBar, NavBarLink, BurgerMenu } from './StyledNavBar';
+import { ListNavBar, NavBarLink, BurgerMenu, HomeNavLinkItem } from './StyledNavBar';
 import { FcContacts } from "react-icons/fc";
 import ModalMenu from 'components/ModalMenu/ModalMenu';
 import { openModal } from 'redux/auth/auth-Slice';
+import { HeaderContainer } from 'components/Layout/LayoutStyles';
 
 
 export default function NavBar() {
@@ -24,10 +25,10 @@ export default function NavBar() {
   return (
     <nav>
         <ListNavBar>
-        <Link to="/"><FcContacts color='#737373' size='40px'/></Link>
-        <li key={homeId}>
+        <Link to="/contacts"><FcContacts color='#737373' size='40px'/></Link>
+        <HomeNavLinkItem key={homeId}>
             <NavBarLink to="/">Home</NavBarLink>
-        </li>
+        </HomeNavLinkItem>
             {isLogginUser ? <BurgerMenu onClick={openBurgerMenu}>=</BurgerMenu> : <></>}
             {isModalOpen ? <ModalMenu /> : <></>}
             {isLogginUser ? <UserNavMenu /> : <AuthNavMenu />}
