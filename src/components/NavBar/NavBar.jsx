@@ -9,8 +9,6 @@ import { ListNavBar, NavBarLink, BurgerMenu, HomeNavLinkItem } from './StyledNav
 import { FcContacts } from "react-icons/fc";
 import ModalMenu from 'components/ModalMenu/ModalMenu';
 import { openModal } from 'redux/auth/auth-Slice';
-import { HeaderContainer } from 'components/Layout/LayoutStyles';
-
 
 export default function NavBar() {
     const isLogginUser = useSelector(getIsLoggedIn);

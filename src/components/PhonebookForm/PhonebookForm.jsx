@@ -6,7 +6,10 @@ import { Form, Btn } from './PhonebookFormStyled';
 import { InputName } from '../App/AppStyled';
 import { addNewContact } from 'redux/api/contactsAPI';
 import filterContact from 'redux/contacts/contacts-selectors';
+import { InputStyled } from 'pages/StyledRegistrationForm';
    
+import { InputAddContact } from './PhonebookFormStyled';
+
 export default function PhonebookForm() {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
@@ -52,23 +55,25 @@ export default function PhonebookForm() {
     let contactTelNumId = nanoid();
     return (
             <Form onSubmit={handleSubmitPhonebookForm}>
-                <InputName htmlFor={contactNameId}> Name </InputName>
-                    <input
+                <label htmlFor={contactNameId} />
+                    <InputAddContact
                         type="text"
                         name="name"
                         value={name}
                         id={contactNameId}
+                        placeholder='Name'
                         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                         required
                         onChange={handleChangeInput}
                     />
-                <InputName htmlFor={contactTelNumId}>Tel.number</InputName>
-                    <input
+                <label htmlFor={contactTelNumId} />
+                    <InputAddContact
                         type="tel"
                         name="number"
                         value={number}
                         id={contactTelNumId}
+                        placeholder='Tel.number'
                         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                         required

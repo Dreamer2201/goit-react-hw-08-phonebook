@@ -25,7 +25,9 @@ export default function App() {
               <Routes>
                 <Route path='/' element={ <Layout /> } >
                         <Route index element={<HomePage />} />
-                        <Route path='register' element={ <RegisterPage />} />
+                        <Route path='register' element={
+                            <RedirectRoute component={RegisterPage} redirect='/contacts' />
+                        } />
                         <Route path='login' element={
                             <RedirectRoute component={LoginPage} redirect='/contacts' />
                         } />                   

@@ -18,6 +18,7 @@ const LoginFormStyled = styled.form`
 `;
 
 const TitleLogPage = styled.h2`
+    text-color: #fafaf5;
     font-size: 18px;
     text-shadow: #FC0 1px 0 2px;
 `;

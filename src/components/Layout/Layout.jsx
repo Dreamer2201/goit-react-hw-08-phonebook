@@ -13,9 +13,12 @@ export default function Layout() {
             <StyledMainContainer>
             <Outlet />
             </StyledMainContainer>
-              
           </main>
-          <StyledFooter>@Copyright by Oksana Polyakova</StyledFooter>
+          <footer>
+             <StyledFooter>
+                    <div>Copyright by Oksana Poliakova</div>
+             </StyledFooter>
+          </footer>
     </>
   )
 }

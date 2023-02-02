@@ -1,9 +1,11 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
 import { useSelector, useDispatch } from 'react-redux';
-import { NavBarLink, ListItemsUserMenu, Wellcome, BtnLogOut, WrapperUserNavMenu } from './StyledNavBar';
+import { NavBarLink, ListItemsUserMenu, WellcomeBlock, Wellcome, BtnLogOut, WrapperUserNavMenu } from './StyledNavBar';
 import { getNameUser } from 'redux/auth/auth-selectors';
 import { fetchLogout } from 'redux/api/authAPI';
+import { RxAvatar } from "react-icons/rx";
+
 
 export default function UserNavMenu() {
     const contactsId = nanoid();
@@ -20,7 +22,10 @@ export default function UserNavMenu() {
                     <NavBarLink to='/family'>Family</NavBarLink>
                 </li>
             </ListItemsUserMenu>
+            <WellcomeBlock>
+        <RxAvatar color='#737373' size='40px'/>
         <Wellcome>Wellcome, {nameUser}</Wellcome>
+        </WellcomeBlock>
         <BtnLogOut type='button' onClick={() => dispatch(fetchLogout())}>Log out</BtnLogOut>
         </WrapperUserNavMenu>
     )

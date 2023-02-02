@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { ContactItemStyled, DeleteContactBtn, AddToFamilyBtn } from "./ContactsStyled"
+import { Btn } from "components/PhonebookForm/PhonebookFormStyled";
 
 export default function ContactItem({ contact, deleteContact, addToFamily }) {
     const { id, name, number } = contact;
@@ -7,13 +8,13 @@ export default function ContactItem({ contact, deleteContact, addToFamily }) {
     return (
         <div>
             <ContactItemStyled> {name}: {number}
-                <DeleteContactBtn type='button'
+                <Btn type='button'
                     onClick={() => deleteContact({ id })}
                 > Delete
-                </DeleteContactBtn>
-                <AddToFamilyBtn type="button"
+                </Btn>
+                <Btn type="button"
                 onClick={() => addToFamily({id})}
-                >Add to family</AddToFamilyBtn>
+                >Add to family</Btn>
             </ContactItemStyled>
         </div>
     )

@@ -19,20 +19,21 @@ const FormStyled = styled.form`
   box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px rgba(0,0,0,1);
 
   @media (min-width: 768px) {
-    width: 350px;
+    width: 450px;
     padding: 50px 100px;
   }
 `;
 const TitleFormPage = styled.h2`
+    color: #de733a;
     margin: 0;
     padding: 0;
     font-family: 'Lobster Two', cursive;
-    font-size: 18px;
-    text-shadow: #FC0 1px 0 1px;
+    font-size: 24px;
+    text-shadow: #575351 2px 0 2px;
 
     @media (min-width: 768px) {
-        font-size: 24px;
-    text-shadow: #FC0 1px 0 2px;
+        font-size: 32px;
+    text-shadow: #575351 2px 0 2px;
       }
 `;
 
@@ -41,7 +42,7 @@ const InputStyled = styled.input`
     width: 100%;
     font-size: 14px;
     line-height: 28px;
-    font-family: font-family: 'Acme', sans-serif;;
+    font-family: font-family: 'Acme', sans-serif;
     margin-bottom: 28px;
     border: none;
     border-bottom: 5px solid rgba(0,0,0,1);

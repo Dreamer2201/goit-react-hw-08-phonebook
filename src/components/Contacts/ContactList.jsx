@@ -8,6 +8,7 @@ import filterContact from 'redux/contacts/contacts-selectors';
 import { fetchContacts, deleteContact } from "redux/api/contactsAPI";
 import { addFamilyContact } from "redux/contacts/contacts-Slice";
 
+
 export function ContactsList() {
     const items = useSelector(filterContact);
     const dispatch = useDispatch();

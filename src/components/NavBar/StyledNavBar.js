@@ -19,9 +19,14 @@ const ListNavBar = styled.ul`
 `;
 const NavBarLink = styled(NavLink)`
     font-family: 'Quattrocento Sans', sans-serif;
-    font-size: 32px;
+    font-size: 24px;
     text-decoration: none;
-    color: #DAF7A6;
+    color: white;
+    text-shadow: 1px 1px 1px black, 0 0 0.1em blue, 0 0 0.1em blue;
+
+    @media (min-width: 767px) {
+        font-size: 32px;
+        }
 
     &:hover,
     &:focus {
@@ -59,7 +64,18 @@ const ListItemsUserMenu = styled.ul`
     align-items: baseline;
 `;
 
+const WellcomeBlock = styled.div`
+    position: absolute;
+    bottom: 0px;
+    right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+`;
+
 const Wellcome = styled.p`
+    margin-left: 8px;
     font-size: 22px;
     text-decoration: none;
     text-shadow: #FFF 1px 0 4px;
@@ -120,4 +136,4 @@ const AuthNavLinkBlock = styled.div`
 `;
 
 
-export {NavBarStyled, ListNavBar, NavBarLink, LogoLink, HomeNavLinkItem, ListItemsUserMenu, LogInLinkItem, AuthNavLinkBlock, BtnLogOut, Wellcome, WrapperUserNavMenu, BurgerMenu};
+export {NavBarStyled, ListNavBar, WellcomeBlock, NavBarLink, LogoLink, HomeNavLinkItem, ListItemsUserMenu, LogInLinkItem, AuthNavLinkBlock, BtnLogOut, Wellcome, WrapperUserNavMenu, BurgerMenu};
