@@ -9,6 +9,8 @@ const OverlayModal = styled.div`
     top: 0;
     right: 0;
     z-index: 99;
+
+    background-image: linear-gradient(150deg, #FFA500, #5B42F3 50%, #d6d3c9);
 `;
 
 const Modal = styled.div`
@@ -17,7 +19,7 @@ const Modal = styled.div`
 
 `
 const WellcomeModal = styled.p`
-    font-size: 22px;
+    font-size: 28px;
     text-decoration: none;
     text-shadow: #FFF 1px 0 4px;
     color: #DAF7A6 ;
@@ -32,19 +34,19 @@ const BtnUserMenuModal = styled.button`
     cursor: pointer;
 `
 
-const WrapperModalNavMenu = styled.div`
+const WrapperModalNavMenu = styled.ul`
     @media (max-width: 767px) {
         list-style: none;
         justify-content: center;
         align-items: center;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
     }
 `;
 
 const NavBurgerLink = styled(NavLink)`
-    font-size: 18px;
+    font-size: 22px;
     text-decoration: none;
     text-shadow: #FFF 1px 0 1px;
     color: #DAF7A6;

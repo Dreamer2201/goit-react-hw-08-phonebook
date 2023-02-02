@@ -7,7 +7,7 @@ import { ConteinerContactsPage } from './StyledContactPage';
 
 export default function ContactsPage() {
     return (
-        <>
+        <ConteinerContactsPage>
             <div>
                 <Title>Phonebook</Title>
                 <PhonebookForm />
@@ -17,6 +17,6 @@ export default function ContactsPage() {
                 <FilterContacts />
                 <Contacts />
             </div>
-        </>
+        </ConteinerContactsPage>
   )
 }

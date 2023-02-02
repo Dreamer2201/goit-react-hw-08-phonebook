@@ -16,7 +16,7 @@ export default function Layout() {
           </main>
           <footer>
              <StyledFooter>
-                    <div>Copyright by Oksana Poliakova</div>
+                    <div>Copyright &#169; by Oksana Poliakova</div>
              </StyledFooter>
           </footer>
     </>

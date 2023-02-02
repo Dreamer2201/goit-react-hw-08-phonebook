@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Title, FamilyListStyled } from './StyledFamilyPage';
+import { Title } from 'components/App/AppStyled';
+import { ContactInf } from 'components/Contacts/ContactsStyled';
 
 export default function FamilyContactsPage() {
   const familyContacts = useSelector(({contacts}) => contacts.family);
@@ -10,7 +11,7 @@ export default function FamilyContactsPage() {
   return (
     <>
       <Title>My family contacts:</Title>
-      <FamilyListStyled>{elements}</FamilyListStyled>
+      <ContactInf>{elements}</ContactInf>
       </>
   )
 }

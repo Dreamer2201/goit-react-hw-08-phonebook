@@ -6,7 +6,8 @@ import AuthNavMenu from './AuthNavMenu';
 import UserNavMenu from './UserNavMenu';
 import { getIsLoggedIn } from 'redux/auth/auth-selectors';
 import { ListNavBar, NavBarLink, BurgerMenu, HomeNavLinkItem } from './StyledNavBar';
-import { FcContacts } from "react-icons/fc";
+import { RiContactsBookFill } from "react-icons/ri";
+
 import ModalMenu from 'components/ModalMenu/ModalMenu';
 import { openModal } from 'redux/auth/auth-Slice';
 
@@ -23,14 +24,14 @@ export default function NavBar() {
   return (
     <nav>
         <ListNavBar>
-        <Link to="/contacts"><FcContacts color='#737373' size='40px'/></Link>
-        <HomeNavLinkItem key={homeId}>
-            <NavBarLink to="/">Home</NavBarLink>
-        </HomeNavLinkItem>
-            {isLogginUser ? <BurgerMenu onClick={openBurgerMenu}>=</BurgerMenu> : <></>}
-            {isModalOpen ? <ModalMenu /> : <></>}
-            {isLogginUser ? <UserNavMenu /> : <AuthNavMenu />}
-            
+          <Link to="/contacts"><RiContactsBookFill color='#FFA500' size='40px' /></Link>
+          <HomeNavLinkItem key={homeId}>
+              <NavBarLink to="/">Home</NavBarLink>
+          </HomeNavLinkItem>
+              {isLogginUser ? <BurgerMenu onClick={openBurgerMenu}>=</BurgerMenu> : <></>}
+              {isModalOpen ? <ModalMenu /> : <></>}
+              {isLogginUser ? <UserNavMenu /> : <AuthNavMenu />}
+              
         </ListNavBar>
     </nav>
   )

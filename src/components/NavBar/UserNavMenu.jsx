@@ -23,10 +23,10 @@ export default function UserNavMenu() {
                 </li>
             </ListItemsUserMenu>
             <WellcomeBlock>
-        <RxAvatar color='#737373' size='40px'/>
-        <Wellcome>Wellcome, {nameUser}</Wellcome>
-        </WellcomeBlock>
-        <BtnLogOut type='button' onClick={() => dispatch(fetchLogout())}>Log out</BtnLogOut>
+                <RxAvatar color='#737373' size='40px'/>
+                <Wellcome>Wellcome, {nameUser}</Wellcome>
+            </WellcomeBlock>
+            <BtnLogOut type='button' onClick={() => dispatch(fetchLogout())}>Log out</BtnLogOut>
         </WrapperUserNavMenu>
     )
 }

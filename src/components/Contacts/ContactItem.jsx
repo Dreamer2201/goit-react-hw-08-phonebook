@@ -1,13 +1,16 @@
 import PropTypes from "prop-types";
 import { ContactItemStyled, DeleteContactBtn, AddToFamilyBtn } from "./ContactsStyled"
 import { Btn } from "components/PhonebookForm/PhonebookFormStyled";
+import { WrapperListContacts, ContactInf, WrapperBtns } from "./ContactsStyled";
 
 export default function ContactItem({ contact, deleteContact, addToFamily }) {
     const { id, name, number } = contact;
 
     return (
-        <div>
-            <ContactItemStyled> {name}: {number}
+        <>
+            <ContactItemStyled>
+                <ContactInf> {name}: {number}</ContactInf>
+                <WrapperBtns>
                 <Btn type='button'
                     onClick={() => deleteContact({ id })}
                 > Delete
@@ -15,8 +18,9 @@ export default function ContactItem({ contact, deleteContact, addToFamily }) {
                 <Btn type="button"
                 onClick={() => addToFamily({id})}
                 >Add to family</Btn>
+                </WrapperBtns>    
             </ContactItemStyled>
-        </div>
+        </>
     )
 }
 

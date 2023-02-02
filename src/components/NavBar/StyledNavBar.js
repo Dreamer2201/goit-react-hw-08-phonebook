@@ -12,8 +12,17 @@ const ListNavBar = styled.ul`
     list-style: none;
     margin: 0;
     padding: 0;
+
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 40px;
+
+    @media (min-width: 768px) {
+        gap: 70px;
+    }
+    
 
 
 `;
@@ -36,9 +45,10 @@ const NavBarLink = styled(NavLink)`
 
     &.active {
         padding: 5px;
-        color: #F28C28;
+        color: #DAF7A6;
         background-color: rgba(72, 102, 157, .4);
         border-radius: 10px;
+        text-shadow: none;
 `;
 
 const LogoLink = styled(Link)`
@@ -48,57 +58,34 @@ const LogoLink = styled(Link)`
 `;
 
 const HomeNavLinkItem = styled.li`
-        margin-left: 40px;
+        margin: 0;
+        padding: 0;
 `;
 
 const LogInLinkItem = styled.li`
         margin-right: 0;
 `;
 
-const ListItemsUserMenu = styled.ul`
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 20px;
-    align-items: baseline;
-`;
 
 const WellcomeBlock = styled.div`
     position: absolute;
-    bottom: 0px;
-    right: 50px;
+    bottom: 2px;
+    right: 70px;
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    gap: 10px;
     align-items: center;
+    
 
 `;
 
 const Wellcome = styled.p`
-    margin-left: 8px;
+    margin: 0;
+    padding: 0;
     font-size: 22px;
     text-decoration: none;
-    text-shadow: #FFF 1px 0 4px;
+    text-shadow: #FFA500 1px 0 4px;
     color: #DAF7A6 ;
-`;
-
-const BtnLogOut = styled.button`
-        padding: 5px 5px;
-        text-align: center;
-        text-decoration: none;
-        text-shadow: #FFF 1px 0 5px;
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 10px;
-        color: #DAF7A6 ;
-        border: transparent;
-        background-color: rgba(230, 230, 250, 0.2);
-
-        &hover,
-        &focus {
-            background-color: rgba(72, 102, 157, .6);
-            color: #2c5777;
-}
 `;
 
 const WrapperUserNavMenu = styled.div`
@@ -108,15 +95,26 @@ const WrapperUserNavMenu = styled.div`
     }
 @media (min-width: 768px) {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: baseline;
-    gap: 20px;
+    justify-content: start;
+    // flex-direction: row;
+    
+    // align-items: baseline;
+    // gap: 20px;
     }
     
-    
-    
 `;
+
+const ListItemsUserMenu = styled.ul`
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 70px;
+    // flex-direction: row;
+    // justify-content: space-around;
+ 
+    // align-items: baseline;
+`;
+
 
 const BurgerMenu = styled.button`
     position: fixed;
@@ -129,6 +127,30 @@ const BurgerMenu = styled.button`
     @media (min-width: 768px) {
         display: none;
     }
+`;
+
+const BtnLogOut = styled.button`
+        position: absolute;
+        top: 10px;
+        right: 10px;
+
+        padding: 4px;
+        text-align: center;
+        text-decoration: none;
+        text-shadow: #FFF 1px 0 5px;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 10px;
+        color: white;
+        text-shadow: 1px 1px 1px black, 0 0 0.1em blue, 0 0 0.1em blue;
+        border: transparent;
+        background-color: rgba(230, 230, 250, 0.2);
+
+        &hover,
+        &focus {
+            background-color: rgba(72, 102, 157, .6);
+            color: #2c5777;
+}
 `;
 
 const AuthNavLinkBlock = styled.div`

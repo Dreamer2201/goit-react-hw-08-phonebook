@@ -14,9 +14,11 @@ const NameHomePage = styled.div`
 const TitleHomePage = styled.h2`
     font-family: 'Lobster Two', cursive;
     font-size: 18px;
+    color: #aaedf2;
+    text-shadow: 1px 1px 1px black, 0 0 0.1em blue, 0 0 0.1em blue;
 
     @media (min-width: 767px) {
-        font-size: 24px;
+        font-size: 32px;
         }
 `;
 
@@ -33,8 +35,8 @@ const Content = styled.p`
     text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
   color: white;
 
-  @media (mim-width: 767px) {
-    font-size: 24px;
+  @media (min-width: 767px) {
+    font-size: 28px;
     }
 `;
 
@@ -50,11 +52,11 @@ const LetsGo = styled.p`
     font-size: 14px;
     font-style: italic;
     text-align: center;
-    color: #F28C28;
+    color: #aaedf2;
     text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em white;
 
     @media (min-width: 767px) {
-        font-size: 24px;
+        font-size: 32px;
         }
 `;
 
