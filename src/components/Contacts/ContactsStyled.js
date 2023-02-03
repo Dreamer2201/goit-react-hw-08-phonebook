@@ -12,7 +12,7 @@ const ContactsListStyled = styled.ul`
     padding-inline-start: 10px;
     color: #fff;
     text-shadow: #FA0 1px 0 5px;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     @media (min-width: 768px) {
         height: 300px;
