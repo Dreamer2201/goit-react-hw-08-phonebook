@@ -24,13 +24,13 @@ export default function ModalMenu () {
     <OverlayModal onClick={closeBurgerMenu}>
       <Modal>
       <WrapperModalNavMenu>
+        <WellcomeModal>{nameUser}</WellcomeModal>
         <li key={contactsId}>
             <NavBurgerLink  to="/contacts">Contacts</NavBurgerLink >
         </li>
         <li>
             <NavBurgerLink to='/family'>Family</NavBurgerLink>
         </li>
-        <WellcomeModal>Wellcome, {nameUser}</WellcomeModal>
         <BtnLogOutModal type='button' onClick={() => dispatch(fetchLogout())}>Log out</BtnLogOutModal>
         </WrapperModalNavMenu>
             <BtnUserMenuModal onClick={closeBurgerMenu}>X</BtnUserMenuModal>

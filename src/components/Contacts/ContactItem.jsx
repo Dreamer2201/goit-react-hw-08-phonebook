@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import { ContactItemStyled, DeleteContactBtn, AddToFamilyBtn } from "./ContactsStyled"
+import { ContactItemStyled } from "./ContactsStyled"
 import { Btn } from "components/PhonebookForm/PhonebookFormStyled";
-import { WrapperListContacts, ContactInf, WrapperBtns } from "./ContactsStyled";
+import { ContactInf, WrapperBtns } from "./ContactsStyled";
 
 export default function ContactItem({ contact, deleteContact, addToFamily }) {
     const { id, name, number } = contact;

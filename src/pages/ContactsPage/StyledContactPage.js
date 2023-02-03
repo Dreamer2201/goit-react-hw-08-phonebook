@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 const ConteinerContactsPage = styled.div`
 
 @media (min-width: 767px) {
@@ -8,8 +7,6 @@ const ConteinerContactsPage = styled.div`
     justify-content: space-around;
     align-items: start;
     }
-    
-
 `;
 
 export {ConteinerContactsPage};

@@ -3,10 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ContactsListStyled } from "./ContactsStyled";
-import ContactItem from "./ContactItem";
 import filterContact from 'redux/contacts/contacts-selectors';
 import { fetchContacts, deleteContact } from "redux/api/contactsAPI";
 import { addFamilyContact } from "redux/contacts/contacts-Slice";
+import ContactItem from "./ContactItem";
 
 
 export function ContactsList() {

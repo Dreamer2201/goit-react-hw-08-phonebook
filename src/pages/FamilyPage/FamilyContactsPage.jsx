@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Title } from 'components/App/AppStyled';
 import { ContactInf } from 'components/Contacts/ContactsStyled';
+import { ConteinerFamilyPage } from './StyledFamilyContactsPage';
 
 export default function FamilyContactsPage() {
   const familyContacts = useSelector(({contacts}) => contacts.family);
@@ -9,9 +10,9 @@ export default function FamilyContactsPage() {
     return <li key={item.id}>{item.name} : {item.number}</li>
   })
   return (
-    <>
-      <Title>My family contacts:</Title>
-      <ContactInf>{elements}</ContactInf>
-      </>
+    <ConteinerFamilyPage>
+        <Title>My family contacts:</Title>
+        <ContactInf>{elements}</ContactInf>
+    </ConteinerFamilyPage>
   )
 }

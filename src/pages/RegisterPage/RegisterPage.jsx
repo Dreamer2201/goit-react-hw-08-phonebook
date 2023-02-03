@@ -2,11 +2,12 @@ import React from 'react'
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
-import { fetchLogin } from 'redux/api/authAPI';
-import { ConteinerLoginPage, LoginFormStyled, TitleLogPage, ButtonStyled } from './StyledLoginForm';
-import { InputStyled, ContainerForm, TitleFormPage, FormStyled} from './StyledRegistrationForm';
+import { fetchRegister } from 'redux/api/authAPI';
+import { ContainerForm, FormStyled, TitleFormPage, InputStyled } from './StyledRegistrationForm';
+import { ButtonStyled } from '../LoginPage/StyledLoginForm';
 
-export default function LoginPage() {
+export default function RegisterPage() {
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -16,6 +17,9 @@ export default function LoginPage() {
         const { name, value } = e.target;
 
         switch (name) {
+            case "name":
+                setName(value);
+                break;
             case "email":
                 setEmail(value);
                 break;
@@ -28,23 +32,35 @@ export default function LoginPage() {
 
     const handlesSubmit = (e) => {
         e.preventDefault();
-        dispatch(fetchLogin({ email, password }));
+        dispatch(fetchRegister({ name, email, password }));
+        setName('');
         setEmail('');
         setPassword('');
     }
 
-    const emailUserId = nanoid();
+    const nameUser = nanoid();
+    const emailUser = nanoid();
     const passwordId = nanoid();
-  return (
+  return (    
     <ContainerForm>
-    <TitleFormPage>Enter your email and password, please.</TitleFormPage>
+    <TitleFormPage>Type registration form, please.</TitleFormPage>
     <FormStyled onSubmit={handlesSubmit}>
-          <label htmlFor={emailUserId} />
+          <label htmlFor={nameUser} />
+          <InputStyled
+                type="text"
+                name="name"
+                value={name}
+                id={nameUser}
+                placeholder='Your name'
+                required
+                onChange={handleChangeInput}
+          />
+          <label htmlFor={emailUser} />
           <InputStyled
                 type="text"
                 name="email"
                 value={email}
-                id={emailUserId}
+                id={emailUser}
                 placeholder='Your email ...@gmail.com'
                 required
                 onChange={handleChangeInput}
@@ -55,11 +71,11 @@ export default function LoginPage() {
                 name="password"
                 value={password}
                 id={passwordId}
-                placeholder='Password'
+                placeholder='Create your unik password'
                 required
                 onChange={handleChangeInput}
           />
-          <ButtonStyled  type='submit'>Log in</ButtonStyled>
+          <ButtonStyled  type='submit'>Sign up</ButtonStyled >
     </FormStyled>
     </ContainerForm>
   )

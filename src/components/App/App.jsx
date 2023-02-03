@@ -1,17 +1,17 @@
-import { Wrapper } from './AppStyled';
-import { Route, Routes } from 'react-router-dom';
-import Layout from 'components/Layout/Layout';
-import ContactsPage from 'pages/ContactsPage';
-import RegisterPage from 'pages/RegisterPage';
-import LoginPage from 'pages/LoginPage';
-import { useDispatch } from 'react-redux';
-import { fetchCurrentUser } from 'redux/api/authAPI';
 import { useEffect, Suspense, lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Wrapper } from './AppStyled';
+import { fetchCurrentUser } from 'redux/api/authAPI';
+import Layout from 'components/Layout/Layout';
 import PrivateRoute from '../Routs/PrivateRoute';
 import RedirectRoute from '../Routs/RedirectRoute';
-import HomePage from 'pages/HomePage';
+import ContactsPage from 'pages/ContactsPage/ContactsPage';
+import RegisterPage from 'pages/RegisterPage/RegisterPage';
+import LoginPage from 'pages/LoginPage/LoginPage';
+import HomePage from 'pages/HomePage/HomePage';
 
-const FamilyContactsPage = lazy(() => import("pages/FamilyContactsPage"));
+const FamilyContactsPage = lazy(() => import("pages/FamilyPage/FamilyContactsPage"));
 
 export default function App() {
     const dispatch = useDispatch();

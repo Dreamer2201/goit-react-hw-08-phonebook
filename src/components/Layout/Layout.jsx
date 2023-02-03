@@ -1,24 +1,26 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom';
 import NavBar from '../NavBar/NavBar';
-import { HeaderStyled, StyledMainContainer, StyledFooter } from './LayoutStyles';
+import { Container, HeaderStyled, StyledMainContainer, FooterContent, StyledFooter } from './LayoutStyles';
 
 export default function Layout() {
   return (
       <>
           <HeaderStyled>
-              <NavBar />
+              <Container>
+                  <NavBar />
+              </Container>
           </HeaderStyled>
-          <main>
-            <StyledMainContainer>
-            <Outlet />
-            </StyledMainContainer>
-          </main>
-          <footer>
-             <StyledFooter>
-                    <div>Copyright &#169; by Oksana Poliakova</div>
-             </StyledFooter>
-          </footer>
+          <StyledMainContainer>
+              <Container>
+                  <Outlet />
+              </Container>
+          </StyledMainContainer>
+          <StyledFooter>
+              <Container>
+                <FooterContent>Copyright &#169; by Oksana Poliakova</FooterContent>
+              </Container>
+          </StyledFooter>
     </>
   )
 }

@@ -28,13 +28,13 @@ const ListNavBar = styled.ul`
 `;
 const NavBarLink = styled(NavLink)`
     font-family: 'Quattrocento Sans', sans-serif;
-    font-size: 24px;
+    font-size: 22px;
     text-decoration: none;
     color: white;
     text-shadow: 1px 1px 1px black, 0 0 0.1em blue, 0 0 0.1em blue;
 
     @media (min-width: 767px) {
-        font-size: 32px;
+        font-size: 28px;
         }
 
     &:hover,
@@ -70,19 +70,17 @@ const LogInLinkItem = styled.li`
 const WellcomeBlock = styled.div`
     position: absolute;
     bottom: 2px;
-    right: 70px;
+    right: 15px;
     display: flex;
     justify-content: start;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
-    
-
 `;
 
 const Wellcome = styled.p`
     margin: 0;
     padding: 0;
-    font-size: 22px;
+    font-size: 18px;
     text-decoration: none;
     text-shadow: #FFA500 1px 0 4px;
     color: #DAF7A6 ;

@@ -26,9 +26,8 @@ const LogoContacts = styled(Link)`
     margin-right: 5px;
 `
 const Content = styled.p`
+    padding: 0;
     margin: 0;
-    display: block;
-    padding: 10px;
     font-family: 'Kalam', cursive;
     font-size: 14px;
     text-align: justify;
@@ -38,6 +37,13 @@ const Content = styled.p`
   @media (min-width: 767px) {
     font-size: 28px;
     }
+`;
+
+const HomePageWrapper = styled.div`
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
 `;
 
 const WrapperLetsGo = styled.div`
@@ -63,4 +69,4 @@ const LetsGo = styled.p`
 
 
 
-export { NameHomePage, WrapperLetsGo, TitleHomePage, LogoContacts, LetsGo ,Content};
+export { NameHomePage, WrapperLetsGo, HomePageWrapper, TitleHomePage, LogoContacts, LetsGo ,Content};

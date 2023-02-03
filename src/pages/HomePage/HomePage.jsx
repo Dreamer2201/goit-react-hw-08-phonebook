@@ -1,11 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { NameHomePage, WrapperLetsGo, TitleHomePage, LogoContacts, LetsGo , Content } from './StyledHomePage';
+import { NameHomePage, HomePageWrapper, WrapperLetsGo, TitleHomePage, LogoContacts, LetsGo , Content } from './StyledHomePage';
 import { RiContactsBookFill } from "react-icons/ri";
 
 export default function HomePage() {
   return (
-    <>
+    <HomePageWrapper>
       <NameHomePage>
         <LogoContacts to="/contacts"><RiContactsBookFill color='#FFA500' size='40px' /></LogoContacts>
         <TitleHomePage>PHONEBOOK</TitleHomePage>
@@ -16,6 +15,6 @@ export default function HomePage() {
       <LetsGo >Let's start to create your favorite contacts!</LetsGo >
       <LogoContacts to="/contacts"><RiContactsBookFill color='#FFA500' size='40px' /></LogoContacts>
       </WrapperLetsGo>
-    </>
+    </HomePageWrapper>
   )
 }

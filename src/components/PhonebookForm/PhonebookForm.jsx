@@ -3,10 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
 import { toast } from 'react-toastify';
 import { Form, Btn } from './PhonebookFormStyled';
-import { InputName } from '../App/AppStyled';
 import { addNewContact } from 'redux/api/contactsAPI';
 import filterContact from 'redux/contacts/contacts-selectors';
-import { InputStyled } from 'pages/StyledRegistrationForm';
    
 import { InputAddContact } from './PhonebookFormStyled';
 

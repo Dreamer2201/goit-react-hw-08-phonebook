@@ -27,19 +27,6 @@ const authSlice = createSlice({
         }
     },
 
-
-    // extraReducers: (builder) => {
-    //     builder
-    //     .addCase(fetchContacts.pending, (state) => {
-    //         state.loading = true;
-    //         return state;
-    //     } )
-    //     .addCase(fetchContacts.fulfilled, (state, action) => {
-    //         state.loading = false;
-    //         state.contacts = [...action.payload];
-    //         return state;
-    //     })
-
     extraReducers: (builder) => {
         builder.addCase(fetchRegister.fulfilled,(state, action) => {
             state.user = action.payload.user;
@@ -65,29 +52,7 @@ const authSlice = createSlice({
             state.isLoggedIn = false;
         })
     } 
-        // [fetchRegister.fulfilled]: (state, action) => {
-        //     state.user = action.payload.user;
-        //     state.token = action.payload.token;
-        //     state.isLoggedIn = true;
-        // },
-        // [fetchLogin.fulfilled]: (state, action) => {
-        //     state.user = action.payload.user;
-        //     state.token = action.payload.token;
-        //     state.isLoggedIn = true;
-        // },
-        // [fetchLogout.fulfilled]: (state, action) => {
-        //     state.user.name = null;
-        //     state.user.email = null;
-        //     state.token = null; 
-        //     state.isLoggedIn = false;
-        // },
-        // [fetchCurrentUser.fulfilled]: (state, action) => {
-        //     state.user = action.payload;
-        //     state.isLoggedIn = true;
-        // },
-        // [fetchCurrentUser.rejected]: (state) => {
-        //     state.isLoggedIn = false;
-        // }
 });
+
 export const { openModal, closeModal } = authSlice.actions;
 export default authSlice.reducer;
