@@ -70,7 +70,7 @@ const LogInLinkItem = styled.li`
 const WellcomeBlock = styled.div`
     position: absolute;
     bottom: 2px;
-    right: 15px;
+    right: 25px;
     display: flex;
     justify-content: start;
     gap: 5px;
@@ -116,8 +116,8 @@ const ListItemsUserMenu = styled.ul`
 
 const BurgerMenu = styled.button`
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
     color: yellow;
     font-size: 20px;
     cursor: pointer;
@@ -130,7 +130,7 @@ const BurgerMenu = styled.button`
 const BtnLogOut = styled.button`
         position: absolute;
         top: 10px;
-        right: 10px;
+        right: 25px;
 
         padding: 4px;
         text-align: center;
